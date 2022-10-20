@@ -1,0 +1,20 @@
+{
+	"name": "headlesswp-plugin-starter/headlesswp-plugin-starter",
+	"description": "Headlesswp Plugin Starter core plugin",
+	"type": "wordpress-plugin",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Kellen Mace",
+			"email": "kellen.mace@gmail.com"
+		}
+	],
+	"require": {
+		"stoutlogic/acf-builder": "^1.12"
+	},
+	"autoload": {
+		"psr-4": {
+			"HeadlesswpPluginStarter\\": "src/"
+		}
+	}
+}
