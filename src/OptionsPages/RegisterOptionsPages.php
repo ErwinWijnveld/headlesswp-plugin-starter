@@ -13,14 +13,15 @@ class RegisterOptionsPages implements Hookable {
     public function register(): void {
         if( function_exists('acf_add_options_page') ) {
             acf_add_options_page(array(
-                'page_title'        => __('Menu'),
-                'menu_title'        => __('Menu'),
+                'page_title'        => __('Website Settings'),
+                'menu_title'        => __('Website Settings'),
                 'menu_slug'         => 'options-menu',
                 'update_button'     => 'Bewaar Menu',
                 'updated_message'   => 'Menu opgeslagen',
                 'position'          => '4',
                 'capability'        => 'edit_posts',
-                'redirect'          => false
+                'redirect'          => false,
+                'show_in_graphql'   => true,
             ));
         }
     }

@@ -7,19 +7,22 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 class OptionsMenu {
     public static function index() {
         
-        $menu_options = new FieldsBuilder('options_menu');
+        $menu_options = new FieldsBuilder('options_menu', [
+            'show_in_graphql' => true
+        ]);
         
         $menu_options
             ->setLocation('options_page', '==', 'options-menu');
 
         $menu_options
-            ->addTab('login_page')
-                ->addImage('login_background_image')
-                ->addImage('login_logo')
+
 
             ->addTab('Header')
                 ->addGroup('header')
-                    ->addImage('logo')
+                    ->addImage('logo')->setWidth(20)
+                    ->addRepeater('menu_items', ['layout' => 'block'])->setWidth(80)
+                        ->addLink('link')
+                    ->endRepeater()
                 ->endGroup()
 
             ->addTab('Footer')
@@ -54,6 +57,10 @@ class OptionsMenu {
                     
                 ->endGroup()
 
+            ->addTab('login_page')
+                ->addImage('login_background_image')
+                ->addImage('login_logo')
+
             ->addTab('404')
                 ->addGroup('404')
                     ->addText('title')
@@ -63,6 +70,10 @@ class OptionsMenu {
                     ->addLink('button_right')
                         ->setWidth(50)
                 ->endGroup()
+
+            ->addTab('General')
+                ->addText('GRAPHQL_JWT_AUTH_SECRET_KEY')
+                ->addText('WORDPRESS_PREVIEW_SECRET', ['default_value' => 'HeadlessPreviewSecret'])
                 
         ;return $menu_options;
     }

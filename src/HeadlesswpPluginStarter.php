@@ -20,6 +20,7 @@ final class HeadlesswpPluginStarter
 	public function run()
 	{
 		include __DIR__ . '/helpers.php';
+		include __DIR__ . '/setup.php';
 		$this->create_instances();
 		$this->register_hooks();
 	}
