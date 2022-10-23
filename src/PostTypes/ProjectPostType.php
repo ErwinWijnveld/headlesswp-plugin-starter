@@ -20,10 +20,22 @@ class ProjectPostType implements Hookable, CustomPostType {
 			'labels'              => $this->generate_labels( 'Project', 'Projects' ),
             'public'              => true,
             'menu_icon'           => 'dashicons-portfolio',
-            'supports'            => ['title', 'editor', 'thumbnail'],
+            'supports'            => ['title', 'editor', 'thumbnail', 'excerpt'],
             'show_in_graphql'     => true,
             'graphql_single_name' => self::GRAPHQL_SINGLE_NAME,
             'graphql_plural_name' => 'Projects',
 		] );
+
+        register_taxonomy( 'project_category', [ self::KEY ], [
+            'labels'              => $this->generate_labels( 'Project Category', 'Project Categories' ),
+            'public'              => true,
+            'show_in_graphql'     => true,
+            'hierarchical' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'projectcategorie' ),
+            'graphql_single_name' => 'ProjectCategory',
+            'graphql_plural_name' => 'ProjectCategories',
+        ] );
+
     }
 }
