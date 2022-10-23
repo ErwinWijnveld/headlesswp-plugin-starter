@@ -8,9 +8,9 @@ class Page {
     public static function index() {
         $flexiblePage = new FieldsBuilder('flexiblePage', [ 
             'position' => 'acf_after_title',
-            'hide_on_screen'    => [
-                'the_content'
-            ],
+            // 'hide_on_screen'    => [
+            //     'the_content'
+            // ],
             'show_in_graphql' => true,
             'graphql_field_name' => 'flexiblePage'
         ]);
