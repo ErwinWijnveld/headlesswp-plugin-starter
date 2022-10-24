@@ -21,6 +21,7 @@ class ProjectPostType implements Hookable, CustomPostType {
             'public'              => true,
             'menu_icon'           => 'dashicons-portfolio',
             'supports'            => ['title', 'editor', 'thumbnail', 'excerpt'],
+            'rewrite'             => ['slug' => 'projects'],
             'show_in_graphql'     => true,
             'graphql_single_name' => self::GRAPHQL_SINGLE_NAME,
             'graphql_plural_name' => 'Projects',
@@ -32,7 +33,7 @@ class ProjectPostType implements Hookable, CustomPostType {
             'show_in_graphql'     => true,
             'hierarchical' => true,
             'has_archive' => true,
-            'rewrite' => array( 'slug' => 'projectcategorie' ),
+            'rewrite' => array( 'slug' => 'projectcategory' ),
             'graphql_single_name' => 'ProjectCategory',
             'graphql_plural_name' => 'ProjectCategories',
         ] );
