@@ -11,6 +11,7 @@ $flexible_layout = new FieldsBuilder('flexible_layout');
 // Load content partials
 $spacer = get_field_partial('partials.spacer');
 $wysiwyg = get_field_partial('partials.wysiwyg');
+$form = get_field_partial('partials.form');
 $section__image_text = get_field_partial('partials.section__image-text');
 $section__image_banner = get_field_partial('partials.section__image-banner');
 $section__image_slider = get_field_partial('partials.section__image-slider');
@@ -22,6 +23,7 @@ $flexible_layout
     // Load layouts
     ->addLayout($spacer)
     ->addLayout($wysiwyg)
+    ->addLayout($form)
     ->addLayout($section__image_text)
     ->addLayout($section__image_banner)
     ->addLayout($section__image_slider)
